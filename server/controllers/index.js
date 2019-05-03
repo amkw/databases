@@ -10,7 +10,7 @@ module.exports = {
 
   messages: {
     get: function (req, res) {
-      db.Message.findAll({include: [db.User]})
+      db.Message.findAll()//{include: [db.User]})
         .then(function(messages) {
           res.json(messages);
         });
