@@ -4,27 +4,27 @@ USE chat;
 
 CREATE TABLE messages (
   /* Describe your table here.*/
-  id int AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(20),
-  comments TEXT,
-  rooms VARCHAR(20),
-  tstamp TIMESTAMP,
-  FOREIGN KEY(rooms) REFERENCES rooms(id),
-  FOREIGN KEY(username) REFERENCES usernames(id)
-
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  userid int NOT NULL,
+  text VARCHAR(200) NOT NULL,
+  roomname VARCHAR(20) NOT NULL
+  -- tstamp TIMESTAMP
+  -- FOREIGN KEY(rooms) REFERENCES rooms(id),
+  -- FOREIGN KEY(username) REFERENCES usernames(id)
 );
 
 /* Create other tables and define schemas for them here! */
 
-CREATE TABLE rooms (
-  id int AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(20)
+CREATE TABLE users (
+  id int NOT NULL AUTO_INCREMENT,
+  username VARCHAR(40) NOT NULL,
+  PRIMARY KEY (ID)
 );
 
-CREATE TABLE usernames (
-  id int AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(20)
-);
+-- CREATE TABLE rooms (
+--   id int AUTO_INCREMENT PRIMARY KEY,
+--   nameroom VARCHAR(20)
+-- );
 
 
 /*  Execute this file from the command line by typing:
